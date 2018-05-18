@@ -25,16 +25,16 @@ class App extends Component {
     this.history = createBrowserHistory();
   }
 
-  componentWillMount() {
-    if (this.props.account.hasToken === null) {
-      this.props.dispatch(
+  componentDidMount() {
+    const { account, dispatch } = this.props;
+    if (!account.hasToken) {
+      dispatch(
         accountActions.remind()
       );
     }
   }
 
   render() {
-    // If checking token
     if (this.props.account.hasToken === null) {
       return (
         <div className="App">
