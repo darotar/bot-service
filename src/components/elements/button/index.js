@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import './style.less';
-import {themeClasses} from '../../../utils';
 
 export default class Button extends Component {
 
@@ -33,7 +32,7 @@ export default class Button extends Component {
     return (
       <a
         type="button"
-        className={cn(`Button`, themeClasses('Button_theme_', theme))}
+        className={cn(`Button`)}
         title={title}
         href={href || '#'}
         onClick={this.onClick}

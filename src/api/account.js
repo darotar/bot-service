@@ -9,7 +9,7 @@ export default {
    * @returns {Promise}
    */
   login: (login, password, remember = false) => {
-    return http.post(`/api/v1/users/sign`, {login, password, remember});
+    return http.post(`/api/users/sign`, {login, password, remember});
   },
 
   /**
@@ -17,13 +17,27 @@ export default {
    * @returns {Promise}
    */
   logout: () => {
-    return http.delete(`/api/v1/users/sign`);
+    return http.delete(`/api/users/sign`);
   },
 
   /**
    * @return {Promise}
    */
   current: () => {
-    return http.get(`/api/v1/users/self`);
+    return http.get(`/api/users/self`);
+  },
+
+  /**
+   * @return {Promise}
+   */
+  signUp: (data) => {
+    return http.get('/api/users/add', data);
+  },
+
+  /**
+   * @return {Promise}
+   */
+  remindPassword: (data) => {
+    return http.post('/api/users/remind', data);
   }
 };
