@@ -1,0 +1,38 @@
+@highlightBgColor: #00bcd4;
+@highlightTextColor: #bd174e;
+
+.menu-left {
+  width: 220px;
+  background-color: #2c3e50;
+  color: white;
+
+  &_item {
+    padding: 8px 12px;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    color: inherit;
+    transition: all 175ms ease;
+
+    &:hover {
+      background-color: @highlightTextColor;
+    }
+
+    &__active {
+      background-color: @highlightTextColor;
+    }
+
+    &_icon, &_text {
+      vertical-align: middle;
+      display: inline-flex;
+    }
+
+    &_icon {
+      width: 42px;
+    }
+
+    &_text {
+      padding-right: 16px;
+    }
+  }
+}
