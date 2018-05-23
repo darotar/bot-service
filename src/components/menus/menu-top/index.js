@@ -16,19 +16,25 @@ export default class MenuTop extends Component {
     theme: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    items: [
+      {title: "Пункт 1", to: '/', active: false},
+      {title: "Пункт 2", to: '/page2', active: true},
+      {title: "Пункт 3", to: '/page3', active: false}
+    ]
+  };
 
   render() {
-    const {items} = this.props;
+    const { items } = this.props;
     return (
       <div className="MenuTop">
-        <ul className="MenuTop__list">
+        <ul className="MenuTop_list">
           {
             items.map((item, index) => (
               <li
                 key={index}
-                className={cn("MenuTop__item ", {"MenuTop__item_active": item.active})}>
-                <Link to={item.to} className="MenuTop__link">{item.title}</Link>
+                className={cn("MenuTop_list_item", {"MenuTop_list_item__active": item.active})}>
+                <a to={item.to} className="MenuTop_list_item_link">{item.title}</a>
               </li>
             ))
           }

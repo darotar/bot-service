@@ -1,10 +1,20 @@
 @highlightBgColor: #00bcd4;
 @highlightTextColor: #bd174e;
+@backgroundColor:  #1a3148;
+@white: white;
 
 .menu-left {
   width: 220px;
-  background-color: #2c3e50;
-  color: white;
+  background-color: @backgroundColor;
+  color: @white;
+  height: 100vh;
+
+  &_logo {
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 
   &_item {
     padding: 8px 12px;

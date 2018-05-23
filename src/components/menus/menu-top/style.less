@@ -1,0 +1,51 @@
+@backgroundColor: #e3eaf4;
+@menuHeight: 50px;
+@borderColor: #aab8c7;
+@textColor: #808fa5;
+@border: 1px solid @borderColor;
+
+.MenuTop {
+  width: calc(100% - 220px);
+  background-color: @backgroundColor;
+  height: @menuHeight;
+  float: right;
+  position: fixed;
+  top: 0;
+  left: 220px;
+
+  &_list {
+    list-style-type: none;
+    float: right;
+    margin: 0;
+    
+    &_item {
+      display: inline-flex;
+      padding: 0 15px;
+      height: @menuHeight;
+      border-right: @border;
+      transition: background-color 175ms ease;
+      cursor: pointer;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &:first-child {
+        border-left: @border;
+      }
+
+      &:hover {
+        background-color: darken(@backgroundColor, 10%);
+      }
+
+      &_link {
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height: @menuHeight;
+        color: @textColor;
+      }
+    }
+  }
+}

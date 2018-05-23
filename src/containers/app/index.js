@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {accountActions} from '../../store/actions';
-import {Route, Router, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import PropTypes from 'prop-types';
 
 import "./style.less";
-
-import Home from '../home';
-import Main from '../main';
-import Login from '../login';
-import NotFound from '../not-found';
-import Modals from '../modals';
+import {MenuTop, MenuLeft} from '../../components/menus';
 
 class App extends Component {
 
@@ -45,15 +39,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Router history={this.history}>
-          <Switch>
-            <Route path="/" exact={true} component={Home}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/main" component={Main}/>
-            <Route component={NotFound}/>
-          </Switch>
-        </Router>
-        <Modals history={this.history}/>
+        <MenuTop />
+        <MenuLeft />
       </div>
     );
   }
