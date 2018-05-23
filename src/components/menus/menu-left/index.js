@@ -33,6 +33,7 @@ export default class MenuLeft extends Component {
     return (
       <div className="menu-left">
         <div>
+          <div className={"menu-left_logo"}>LOGO</div>
           {this.getMenuItems()}
         </div>
       </div>

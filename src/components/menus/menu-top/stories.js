@@ -8,8 +8,8 @@ import MenuTop from './index';
 
 const history = createBrowserHistory();
 
-storiesOf('menus/MenuTop', module)
-  .add('default', withInfo()(() => (
+storiesOf('MenuTop', module)
+  .add('default', () => (
     <Router history={history}>
       <MenuTop
         items={[
@@ -19,4 +19,4 @@ storiesOf('menus/MenuTop', module)
         ]}
       />
     </Router>
-  )));
+  ));
